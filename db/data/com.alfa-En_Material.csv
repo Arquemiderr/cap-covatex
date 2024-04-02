@@ -1,0 +1,6 @@
+folio_entrada,id_proveedor,fecha_entrada,no_articulos,almacenista
+1,1,2006-11-05T00:00:00Z,1,Arturo
+2,2,2006-11-05T00:00:00Z,2,Armando
+3,3,2006-11-05T00:00:00Z,3,Alejandro
+4,4,2006-11-05T00:00:00Z,4,Adal
+5,5,2006-11-05T00:00:00Z,5,Angel
