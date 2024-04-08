@@ -1,15 +1,20 @@
 namespace com.alfa;
 
-entity En_Material {
-    key folio_entrada : UUID;
-        id_proveedor  : String(10);
-        fecha_entrada : DateTime;
+using {managed} from '@sap/cds/common';
+
+
+entity En_Material : managed {
+    key folio_entrada : String;
+        id_proveedor  : String;
+        fecha_entrada : Date;
         no_articulos  : String(10);
         almacenista   : String(20);
+        ToProveedor   : Association to Proveedor
+                            on ToProveedor.id_proveedor = id_proveedor;
 }
 
-entity Proveedor {
-    key id_proveedor     : UUID;
+entity Proveedor : managed {
+    key id_proveedor     : String;
         nombre           : String(50);
         apellido_paterno : String(25);
         apellido_materno : String(25);
@@ -29,18 +34,20 @@ entity Proveedor {
         email            : String(50);
 }
 
-entity Det_En_Material {
-    key folio_entrada : UUID;
-        id_Material   : UUID;
-        rollos        : DateTime;
+entity Det_En_Material : managed {
+    key folio_entrada : String;
+        id_Material   : String;
+        rollos        : Date default $now;
         metros        : String(10);
         peso          : String(20);
         tipo_rollo    : String(10);
+        ToMaterial    : Association to Material
+                            on ToMaterial.id_Material = id_Material
 }
 
 
-entity material {
-    key id_Material        : UUID;
+entity Material : managed {
+    key id_Material        : String;
         descripcion        : String(10);
         color              : String(10);
         rollos             : String(20);

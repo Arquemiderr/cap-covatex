@@ -1,0 +1,14 @@
+### Get Material
+GET  http://localhost:4004/odata/v4/en-material/GetEnMaterial
+
+### Get Create
+POST  http://localhost:4004/odata/v4/en-material/CreateMaterial HTTP/1.1
+Content-Type: application/json
+
+{
+    "folio_entrada": "8",
+    "id_proveedor": "16",
+    "fecha_entrada": "2006-11-05",
+    "no_articulos" : "1",
+    "almacenista": "Alejandro"
+}
