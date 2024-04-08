@@ -1,14 +1,26 @@
 ### Get Material
-GET  http://localhost:4004/odata/v4/en-material/GetEnMaterial
+GET  http://localhost:4004/odata/v4/en-material/EnMaterial
 
-### Get Create
-POST  http://localhost:4004/odata/v4/en-material/CreateMaterial HTTP/1.1
+### Create Material
+POST  http://localhost:4004/odata/v4/en-material/EnMaterial HTTP/1.1
 Content-Type: application/json
 
 {
-    "folio_entrada": "8",
-    "id_proveedor": "16",
+    "folio_entrada": "6",
+    "id_proveedor": "2",
     "fecha_entrada": "2006-11-05",
     "no_articulos" : "1",
-    "almacenista": "Alejandro"
+    "almacenista": "Alexis"
 }
+
+### Update Material
+PUT http://localhost:4004/odata/v4/en-material/EnMaterial('1') HTTP/1.1
+Content-Type: application/json
+
+{
+    "fecha_entrada": "2024-01-01",
+    "almacenista": "Alexis"
+}
+
+### Delete Material
+DELETE http://localhost:4004/odata/v4/en-material/EnMaterial('1')
